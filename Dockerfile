@@ -1,6 +1,5 @@
 FROM harbork12/docker-alpine-nginx-php7
 MAINTAINER Michael Martin <mmartin@fuelingbrands.com>
-LABEL authors="Matt Cuyar,Michael Martin"
 
 #----------------------------------------------------
 # Base Alpine edge image w/s6 Overlay, Nginx and PHP7
