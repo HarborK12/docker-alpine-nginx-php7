@@ -1,4 +1,4 @@
-FROM harbork12/docker-alpine-nginx-php7
+FROM harbork12/docker-alpine-nginx
 MAINTAINER Michael Martin <mmartin@fuelingbrands.com>
 
 #----------------------------------------------------
