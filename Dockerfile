@@ -1,4 +1,4 @@
-FROM habork12/docker-alpine-nginx
+FROM harbork12/docker-alpine-nginx-php7
 MAINTAINER Michael Martin <mmartin@fuelingbrands.com>
 LABEL authors="Matt Cuyar,Michael Martin"
 
