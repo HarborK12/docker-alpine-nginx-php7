@@ -63,3 +63,5 @@ WORKDIR /var/www
  # Copy files
  #/
 COPY rootfs /
+
+RUN apk update
