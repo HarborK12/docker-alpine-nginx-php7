@@ -2,5 +2,9 @@
 
 mkdir -p /var/log/cron
 file=/var/www/cron.conf
-echo '' >> ${file}
+
+if [ ! -f $file ]; then
+    echo '' >> ${file}
+fi
+
 crontab ${file}
