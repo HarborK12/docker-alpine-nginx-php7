@@ -29,13 +29,15 @@ RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/edge
     php7-dom \
     php7-pcntl \
     php7-posix \
-    php7-session
+    php7-session \
+    php7-xsl \
+    php7-fileinfo
 #   php7-readline
 
 ##/
  # Link PHP
  #/
-RUN ln -s /usr/bin/php7 /usr/bin/php
+#RUN ln -s /usr/bin/php7 /usr/bin/php
 
 ##/
  # Install composer
