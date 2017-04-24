@@ -8,7 +8,7 @@ MAINTAINER Michael Martin <mmartin@fuelingbrands.com>
 ##/
  # Install PHP
  #/
-RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/edge/testing add \
+RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/edge/community add \
     php7 \
     php7-fpm \
     php7-xml \
