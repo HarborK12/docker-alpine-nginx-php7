@@ -1,4 +1,4 @@
-FROM harbork12/docker-alpine-nginx
+FROM entrack/docker-alpine-nginx
 MAINTAINER Michael Martin <mmartin@fuelingbrands.com>
 
 #----------------------------------------------------
@@ -8,7 +8,7 @@ MAINTAINER Michael Martin <mmartin@fuelingbrands.com>
 ##/
  # Install PHP
  #/
-RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/edge/community add \
+RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/v3.5/community add \
     php7 \
     php7-fpm \
     php7-xml \
