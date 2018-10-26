@@ -1,5 +1,5 @@
 FROM entrack/docker-alpine-nginx
-MAINTAINER Michael Martin <mmartin@fuelingbrands.com>
+MAINTAINER Michael Martin <mmartin@encoretg.com>
 
 #----------------------------------------------------
 # Base Alpine edge image w/s6 Overlay, Nginx and PHP7
@@ -8,7 +8,7 @@ MAINTAINER Michael Martin <mmartin@fuelingbrands.com>
 ##/
  # Install PHP
  #/
-RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/v3.5/community add \
+RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/v3.8/community add \
     php7 \
     php7-fpm \
     php7-xml \
@@ -31,6 +31,9 @@ RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/v3.5
     php7-posix \
     php7-session \
     php7-xsl \
+    php7-tokenizer \
+    php7-simplexml \
+    php7-fileinfo \
     libpng
 #    php7-fileinfo
 #   php7-readline
