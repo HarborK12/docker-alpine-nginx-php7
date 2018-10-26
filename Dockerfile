@@ -31,14 +31,14 @@ RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/v3.5
     php7-posix \
     php7-session \
     php7-xsl \
-    libpng  
+    libpng
 #    php7-fileinfo
 #   php7-readline
 
 ##/
  # Link PHP
  #/
-RUN ln -s /usr/bin/php7 /usr/bin/php
+#RUN ln -s /usr/bin/php7 /usr/bin/php
 
 ##/
  # Install composer
