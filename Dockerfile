@@ -1,14 +1,18 @@
-FROM entrack/docker-alpine-nginx
+FROM entrack/docker-alpine-nginx:alpine39
 MAINTAINER Michael Martin <mmartin@encoretg.com>
 
 #----------------------------------------------------
 # Base Alpine edge image w/s6 Overlay, Nginx and PHP7
 #----------------------------------------------------
 
+RUN apk add --upgrade apk-tools
+
 ##/
  # Install PHP
  #/
-RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/v3.8/community add \
+RUN apk --no-cache --update add libressl2.7-libcrypto libmcrypt-dev
+
+RUN apk --no-cache --update add \
     php7 \
     php7-fpm \
     php7-xml \
@@ -35,8 +39,10 @@ RUN apk --no-cache --update --repository=http://dl-4.alpinelinux.org/alpine/v3.8
     php7-simplexml \
     php7-fileinfo \
     libpng
-#    php7-fileinfo
-#   php7-readline
+
+RUN apk --no-cache --update add php7-pear php7-dev gcc musl-dev make
+
+RUN pecl install mcrypt-1.0.1 && apk del --no-cache php7-pear php7-dev gcc musl-dev make
 
 ##/
  # Link PHP
