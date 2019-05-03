@@ -1,4 +1,4 @@
-FROM entrack/docker-alpine-nginx:alpine39
+FROM entrack/docker-alpine-nginx:alpine35
 MAINTAINER Michael Martin <mmartin@encoretg.com>
 
 #----------------------------------------------------
@@ -7,47 +7,40 @@ MAINTAINER Michael Martin <mmartin@encoretg.com>
 
 RUN apk add --upgrade apk-tools
 
-##/
- # Install PHP
- #/
-RUN apk --no-cache --update add libressl2.7-libcrypto libmcrypt-dev
-
 RUN apk --no-cache --update add \
     php7 \
-    php7-fpm \
-    php7-xml \
-    php7-pgsql \
-    php7-pdo_pgsql \
-    php7-mysqli \
-    php7-pdo_mysql \
-    php7-mcrypt \
-    php7-opcache \
-    php7-gd \
-    php7-curl \
-    php7-json \
-    php7-phar \
-    php7-openssl \
     php7-ctype \
-    php7-mbstring \
-    php7-zip \
+    php7-curl \
     php7-dom \
+    php7-fpm \
+#    php7-fileinfo \
+    php7-gd \
+    php7-json \
+    php7-pdo_mysql \
+    php7-pdo_pgsql \
+    php7-pgsql \
+    php7-mbstring \
+    php7-mcrypt \
+    php7-mysqli \
+    php7-opcache \
+    php7-openssl \
     php7-pcntl \
+    php7-phar \
     php7-posix \
     php7-session \
+#    php7-xdebug \
+    php7-xml \
+    php7-xml \
     php7-xsl \
-    php7-tokenizer \
-    php7-simplexml \
-    php7-fileinfo \
-    libpng
-
-RUN apk --no-cache --update add php7-pear php7-dev gcc musl-dev make
-
-RUN pecl install mcrypt-1.0.1 && apk del --no-cache php7-pear php7-dev gcc musl-dev make
+    php7-zip \
+    php7-zlib \
+    libpng \
+    libressl2.4-libcrypto
 
 ##/
  # Link PHP
  #/
-#RUN ln -s /usr/bin/php7 /usr/bin/php
+RUN ln -s /usr/bin/php7 /usr/bin/php
 
 ##/
  # Install composer
